@@ -63,6 +63,29 @@
                 Console.WriteLine(num + "은 소수가 아닙니다.");
             }
 
+            // 10번
+
+            Console.WriteLine("양의 정수를 입력하시오 : ");
+            int input = int.Parse(Console.ReadLine());
+            int result = SumOfDigits(input);
+            Console.WriteLine(result);
+
+        }
+
+        static int SumOfDigits(int num)
+        {
+            int answer = 0;
+
+            while (num != 0)                // num/10이 0보다 클 경우 계속 반복
+            {
+                answer += num % 10;
+                num = num / 10;
+            }
+
+            return answer;
+
+
+
         }
     }
 }
