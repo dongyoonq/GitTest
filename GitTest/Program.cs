@@ -238,8 +238,14 @@ namespace GitTest
 
                 }
             }
-         
-            
+
+            // SlidePuzzle
+            /*
+            SlidePuzzle.GetInstance().Init();
+            SlidePuzzle.GetInstance().PrintBoard();
+            SlidePuzzle.GetInstance().Run();
+            */
+
         }
 
     }
