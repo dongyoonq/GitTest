@@ -1,4 +1,5 @@
-﻿using System.Threading.Channels;
+﻿using Microsoft.Win32.SafeHandles;
+using System.Threading.Channels;
 
 namespace GitTest
 {
@@ -122,6 +123,9 @@ namespace GitTest
                     Console.WriteLine(commonItems[i]);
                 }
             }
+
+            Console.WriteLine("0~999 사이의 숫자 하나를 입력하세요.");
+            UpDown();
         }
 
 
@@ -169,7 +173,73 @@ namespace GitTest
                 }
             }
             // List를 배열로 변환하여 반환
-            return commonItems.ToArray();
+            return commonItems.ToArray(); 
+        }
+
+
+        // 12번
+        static void UpDown()
+        {
+            Random rand = new Random();
+            int answer = rand.Next(0, 999);     // 컴퓨터가 출력한 랜덤값
+
+            for(int i = 0; i < 10; i++)          // 10번 반복하는 for문 생성
+            {
+                int user = int.Parse(Console.ReadLine());
+                
+                if(user == answer)
+                {
+                    Console.WriteLine("정답입니다!");
+                    break;
+                }
+                else if (user > answer)
+                {
+                    Console.WriteLine("정답보다 큰 수입니다.");
+                    if (i == 9)
+                    {
+                        Console.WriteLine("정답은 " + answer + "입니다.");
+                        Console.WriteLine("재시작 하시겠습니까?");
+
+                        string choice = Console.ReadLine();
+
+                        if (choice == "네")
+                        {
+                            Console.WriteLine("0~999 사이의 숫자 하나를 입력하세요.");
+                            UpDown();
+                        }
+
+                        else
+                        {
+                            Console.WriteLine("게임이 종료되었습니다.");
+                        }
+                    }
+                }
+                else if (user < answer)
+                {
+                    Console.WriteLine("정답보다 작은 수입니다.");
+                    if (i == 9)
+                    {
+                        Console.WriteLine("정답은 " + answer + "입니다.");
+                        Console.WriteLine("재시작 하시겠습니까?");
+
+                        string choice = Console.ReadLine();
+
+                        if (choice == "네")
+                        {
+                            Console.WriteLine("0~999 사이의 숫자 하나를 입력하세요.");
+                            UpDown();
+                        }
+
+                        else
+                        {
+                            Console.WriteLine("게임이 종료되었습니다.");
+                        }
+                    }
+
+                }
+            }
+         
+            
         }
 
     }
