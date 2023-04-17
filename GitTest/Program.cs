@@ -246,6 +246,8 @@ namespace GitTest
             SlidePuzzle.GetInstance().Run();
             */
 
+
+            // 코드가 마음에 들지 않네요 수정 부탁드립니다 통일성도 하나도 안맞고 그냥 상어밥으로 줄 코드
         }
 
     }
