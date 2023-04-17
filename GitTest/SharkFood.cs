@@ -14,8 +14,10 @@ namespace GitTest
 
         public void TakeDamage(int damage)
         {
-            Console.WriteLine("상돌이가 데미지를 받음");
-            Console.WriteLine("상돌이가 울부짖는다");
+            hp -= damage;
+            Console.WriteLine("상돌이가" + damage + "만큼의 데미지를 받음");
+            Console.WriteLine("상돌이의 체력이 " + hp + "가 되었다.");
+            Console.WriteLine("상돌이가 울부짖는다.");
         }
     }
 }
